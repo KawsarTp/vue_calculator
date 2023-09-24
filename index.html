@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+
+<body>
+
+  <div id="app">
+    <table class="calculator">
+      <tr>
+        <td colspan="3">
+          <input class="display-box" type="text" v-model="display" disabled />
+        </td>
+
+        <td>
+          <input type="button" value="C" @click="clear">
+        </td>
+      </tr>
+      
+      <tr>
+        <td>
+          <button-component cal="1" @listerner="print"></button-component>
+        </td>
+        <td>
+          <button-component cal="2" @listerner="print"></button-component>
+        </td>
+
+        <td>
+          <button-component cal="3" @listerner="print"></button-component>
+        </td>
+
+        <td>
+          <button-component cal="/" @listerner="print"></button-component>
+
+        </td>
+
+      </tr>
+      <tr>
+        <td> <button-component cal="4" @listerner="print"></button-component></td>
+        <td> <button-component cal="5" @listerner="print"></button-component></td>
+        <td> <button-component cal="6" @listerner="print"></button-component></td>
+        <td> <button-component cal="-" @listerner="print"></button-component></td>
+      </tr>
+      <tr>
+        <td> <button-component cal="7" @listerner="print"></button-component> </td>
+        <td> <button-component cal="8" @listerner="print"></button-component> </td>
+        <td> <button-component cal="9" @listerner="print"></button-component> </td>
+        <td> <button-component cal="+" @listerner="print"></button-component> </td>
+      </tr>
+      <tr>
+        <td> <button-component cal="." @listerner="print"></button-component> </td>
+        <td> <button-component cal="0" @listerner="print"></button-component></td>
+        <td> <button-component cal="=" @listerner="print"></button-component> </td>
+        <td> <button-component cal="*" @listerner="print"></button-component> </td>
+      </tr>
+    </table>
+  </div>
+
+
+  <script src="./main.js"></script>
+  <script src="./components/ButtonComponent.js"></script>
+  <script>
+    app.mount('#app')
+  </script>
+</body>
+
+</html>
